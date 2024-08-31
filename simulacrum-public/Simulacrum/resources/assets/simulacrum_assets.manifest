@@ -1,0 +1,62 @@
+ManifestFileVersion: 0
+CRC: 1532233668
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: faa0c0d11687ff8da0d3847fd758b5c2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: d0b27eb5f6d6ef63901ecbf4765c2506
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: faa0c0d11687ff8da0d3847fd758b5c2
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 72
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 73398921
+  Script: {instanceID: 0}
+- Class: 2058629509
+  Script: {instanceID: 0}
+- Class: 2083052967
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Unity.RenderPipelines.HighDefinition.Runtime
+  ClassName: UnityEngine.Rendering.HighDefinition.BoolScalableSettingValue
+- AssemblyName: Unity.RenderPipelines.HighDefinition.Runtime
+  ClassName: UnityEngine.Rendering.HighDefinition.IntScalableSettingValue
+Assets:
+- Assets/Simulacrum/Prefabs/PowerupHealth.prefab
+- Assets/Simulacrum/Prefabs/EntitySpawn.prefab
+- Assets/Simulacrum/Prefabs/PowerupOnslaught.prefab
+Dependencies: []
