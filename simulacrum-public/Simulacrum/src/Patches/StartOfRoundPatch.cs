@@ -1,15 +1,19 @@
 using HarmonyLib;
+using Simulacrum.Controllers;
+using Unity.Netcode;
 
 namespace Simulacrum.Patches;
 
 [HarmonyPatch(typeof(StartOfRound))]
 internal static class StartOfRoundPatch
 {
-    [HarmonyPrefix, HarmonyPatch("openingDoorsSequence", MethodType.Enumerator)]
-    private static bool openingDoorsSequencePatch()
+    [HarmonyPrefix, HarmonyPatch("Start")]
+    private static void StartPatch()
     {
-        Simulacrum.Environment.OnLevelPostload();
-        return false;
+        EnvironmentController.Levels = Simulacrum.GameConfig.Environment
+            .FilterDisabledMoons(LethalLevelLoader.PatchedContent.ExtendedLevels)
+            .ToArray();
+        Simulacrum.GameConfig.Sheets.CheckMoonSheets(EnvironmentController.Levels);
     }
 
     [HarmonyPrefix, HarmonyPatch("TeleportPlayerInShipIfOutOfRoomBounds")]

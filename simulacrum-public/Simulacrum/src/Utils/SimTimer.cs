@@ -11,6 +11,8 @@ internal class SimTimer
     private float initialTime;
     private float countdown;
 
+    private bool isStopped;
+
     private SimTimer()
     {
     }
@@ -25,6 +27,9 @@ internal class SimTimer
         return timer;
     }
 
+    internal void Stop() => isStopped = true;
+    internal void Start() => isStopped = false;
+
     internal void Set(float newTime)
     {
         initialTime = newTime;
@@ -33,6 +38,8 @@ internal class SimTimer
 
     internal bool Tick()
     {
+        if (isStopped) return false;
+
         countdown -= Time.deltaTime;
         if (countdown <= 0)
         {
@@ -43,5 +50,9 @@ internal class SimTimer
         return false;
     }
 
-    internal void Reset() => countdown = initialTime;
+    internal void Reset()
+    {
+        countdown = initialTime;
+        isStopped = false;
+    }
 }

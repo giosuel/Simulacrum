@@ -2,10 +2,10 @@ using System;
 
 namespace Simulacrum.Utils;
 
-public class SimAttributes
+public abstract class SimAttributes
 {
     /// <summary>
-    ///     Methods marked with this attribute should only ever be executed on the host. As they require server permissions.
+    ///     Methods marked with this attribute are only ever executed on the host.
     ///     Can only be called by the host.
     /// </summary>
     internal class HostOnly : Attribute;

@@ -8,6 +8,11 @@ internal static class EntranceTeleportPatch
     [HarmonyPrefix, HarmonyPatch("TeleportPlayer")]
     private static bool TeleportPlayerPrefixPatch(EntranceTeleport __instance)
     {
+        if (Simulacrum.Gulag.IsPlayerInGulag)
+        {
+            Simulacrum.Gulag.ExitGulag();
+            return false;
+        }
         return !Simulacrum.Environment.TeleportersDisabled;
     }
 
@@ -16,7 +21,7 @@ internal static class EntranceTeleportPatch
     {
         if (!__instance.isEntranceToBuilding || Simulacrum.Environment.TeleportersDisabled) return;
 
-        Simulacrum.Environment.OnPlayerEnterBuilding();
+        Simulacrum.Environment.OnPlayerEnterBuildingClient();
     }
 
     [HarmonyPrefix, HarmonyPatch("TeleportPlayerClientRpc")]
@@ -24,6 +29,6 @@ internal static class EntranceTeleportPatch
     {
         if (__instance.isEntranceToBuilding || Simulacrum.Environment.TeleportersDisabled) return;
 
-        Simulacrum.Environment.OnPlayerLeaveBuilding();
+        Simulacrum.Environment.OnPlayerLeaveBuildingClient();
     }
 }
